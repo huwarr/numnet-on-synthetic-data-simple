@@ -44,15 +44,15 @@ NumNet+: [[CODE]](https://github.com/llamazing/numnet_plus)
 
 - Download RoBERTa.
 
-  `mkdir roberta.large && cd roberta.large'
+  `mkdir roberta.large && cd roberta.large`
   
-  `wget -O pytorch_model.bin https://s3.amazonaws.com/models.huggingface.co/bert/roberta-large-pytorch_model.bin'
+  `wget -O pytorch_model.bin https://s3.amazonaws.com/models.huggingface.co/bert/roberta-large-pytorch_model.bin`
   
-  `wget -O config.json https://s3.amazonaws.com/models.huggingface.co/bert/roberta-large-config.json'
+  `wget -O config.json https://s3.amazonaws.com/models.huggingface.co/bert/roberta-large-config.json`
   
-  `wget -O vocab.json https://s3.amazonaws.com/models.huggingface.co/bert/roberta-large-vocab.json'
+  `wget -O vocab.json https://s3.amazonaws.com/models.huggingface.co/bert/roberta-large-vocab.json`
   
-  `wget -O merges.txt https://s3.amazonaws.com/models.huggingface.co/bert/roberta-large-merges.txt'
+  `wget -O merges.txt https://s3.amazonaws.com/models.huggingface.co/bert/roberta-large-merges.txt`
   
   Modify **config.json** from `"output_hidden_states": false` to `"output_hidden_states": true`.
 
