@@ -10,7 +10,7 @@ Training scheme consists of the following steps:
 
 ## Sources
 
-Data: [[CODE]]](https://github.com/ag1988/injecting_numeracy), [[PDF]](https://arxiv.org/pdf/2004.04487.pdf)
+Data: [[CODE]](https://github.com/ag1988/injecting_numeracy), [[PDF]](https://arxiv.org/pdf/2004.04487.pdf)
 
 NumNet+: [[CODE]](https://github.com/llamazing/numnet_plus)
 
