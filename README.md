@@ -35,9 +35,7 @@ NumNet+: [[CODE]](https://github.com/llamazing/numnet_plus)
   `gdown https://drive.google.com/uc?id=1TXZv_za1I_zC3LZ4bg2A8IJmOLpqd7xo`
   
   `gdown https://drive.google.com/uc?id=1p3OeXhpmbdrhba4P_onWveUVlPinyTig`
-  
-  Numeric synthetic data:
-  
+    
 - Download DROP dataset.
 
   `wget -O drop_dataset.zip https://s3-us-west-2.amazonaws.com/allennlp/datasets/drop/drop_dataset.zip`
