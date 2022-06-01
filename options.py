@@ -94,3 +94,9 @@ def add_inference_args(parser: ArgumentParser):
     parser.add_argument(
         "--eval_batch_size", type=int, default=32, help="eval batch size."
     )
+
+
+def add_finetune_args(parser: ArgumentParser):
+    parser.add_argument("--pretrained", type=bool, default=True, help="whether to use pre-trained")
+    parser.add_argument("--pre_path", type=str, default='', help="prepath")
+    parser.add_argument("--numeric_only", type=bool, default=True, help="whether pretraining on ND only was made")

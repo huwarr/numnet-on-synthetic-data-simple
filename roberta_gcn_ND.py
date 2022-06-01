@@ -46,11 +46,11 @@ def main():
     best_result = float("-inf")
     logger.info("Loading data...")
     if not args.tag_mspan:
-        train_itr = DropBatchGen(args, data_mode="train", tokenizer=tokenizer)
-        dev_itr = DropBatchGen(args, data_mode="dev", tokenizer=tokenizer)
+        train_itr = DropBatchGen(args, data_type='numeric', data_mode="train", tokenizer=tokenizer)
+        dev_itr = DropBatchGen(args, data_type='numeric', data_mode="dev", tokenizer=tokenizer)
     else:
-        train_itr = TDropBatchGen(args, data_mode="train", tokenizer=tokenizer)
-        dev_itr = TDropBatchGen(args, data_mode="dev", tokenizer=tokenizer)
+        train_itr = TDropBatchGen(args, data_type='numeric', data_mode="train", tokenizer=tokenizer)
+        dev_itr = TDropBatchGen(args, data_type='numeric', data_mode="dev", tokenizer=tokenizer)
     num_train_steps = int(
         args.max_epoch * len(train_itr) / args.gradient_accumulation_steps
     )
@@ -67,6 +67,13 @@ def main():
             dropout_prob=args.dropout,
             use_gcn=args.use_gcn,
             gcn_steps=args.gcn_steps,
+            #in numeric data, questions are always empty
+            answering_abilities=[
+                "passage_span_extraction",
+                "addition_subtraction",
+                "counting",
+                "multiple_spans"
+            ]
         )
     else:
         network = TNumericallyAugmentedBertNet(
@@ -75,6 +82,13 @@ def main():
             dropout_prob=args.dropout,
             use_gcn=args.use_gcn,
             gcn_steps=args.gcn_steps,
+            #in numeric data, questions are always empty
+            answering_abilities=[
+                "passage_span_extraction",
+                "addition_subtraction",
+                "counting",
+                "multiple_spans"
+            ]
         )
 
     logger.info("Build optimizer etc...")
@@ -82,7 +96,8 @@ def main():
 
     train_start = datetime.now()
     first = True
-
+    loss_prev = float('inf')
+    loss_curr = float('inf')
     for epoch in range(1, args.max_epoch + 1):
         model.avg_reset()
         if not first:
@@ -122,6 +137,11 @@ def main():
             model.save(save_prefix, epoch)
             best_result = eval_f1
             logger.info("Best eval F1 {} at epoch {}".format(best_result, epoch))
+        
+        # Stopping criteria
+        if abs(loss_curr - loss_prev) < args.eps:
+            logger.info("Optimization has converged, at epoch {}".format(epoch))
+            break
 
     logger.info(
         "done training in {} seconds!".format((datetime.now() - train_start).seconds)
