@@ -137,12 +137,6 @@ class NumericallyAugmentedBertNet(nn.Module):
             "passage_span_extraction" in self.answering_abilities
             or "question_span_extraction" in self.answering_abilities
         ):
-            self._passage_span_extraction_index = self.answering_abilities.index(
-                "passage_span_extraction"
-            )
-            self._question_span_extraction_index = self.answering_abilities.index(
-                "question_span_extraction"
-            )
             self._span_start_predictor = nn.Linear(4 * hidden_size, 1, bias=False)
             self._span_end_predictor = nn.Linear(4 * hidden_size, 1, bias=False)
 
