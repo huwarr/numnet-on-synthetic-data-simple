@@ -41,7 +41,8 @@ SAVE_DIR=${BASE_DIR}/numnet_plus_TD_${SEED}_LR_${LR}_BLR_${BLR}_WD_${WD}_BWD_${B
 DATA_CONFIG="--data_dir ${DATA_DIR} --save_dir ${SAVE_DIR}"
 TRAIN_CONFIG="--batch_size 38 --eval_batch_size 5 --max_epoch 3 --warmup 0.1 --optimizer adam \
               --learning_rate ${LR} --weight_decay ${WD} --seed ${SEED} --gradient_accumulation_steps 4 \
-              --bert_learning_rate ${BLR} --bert_weight_decay ${BWD} --log_per_updates 100 --eps 1e-6"
+              --bert_learning_rate ${BLR} --bert_weight_decay ${BWD} --log_per_updates 100 --eps 1e-6 \
+              ----pre_path ./numnet_plus_ND_345_LR_1e-5_BLR_1e-5_WD_5e-5_BWD_0.01tag_mspan/checkpoint_best.pt"
 BERT_CONFIG="--roberta_model ${DATA_DIR}/roberta.large"
 
 

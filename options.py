@@ -97,6 +97,6 @@ def add_inference_args(parser: ArgumentParser):
 
 
 def add_finetune_args(parser: ArgumentParser):
-    parser.add_argument("--pretrained", type=bool, default=True, help="whether to use pre-trained")
+    parser.add_argument("--pretrained", action='store_true', default=True, help="whether to use pre-trained")
     parser.add_argument("--pre_path", type=str, default='', help="prepath")
-    parser.add_argument("--numeric_only", type=bool, default=True, help="whether pretraining on ND only was made")
+    parser.add_argument("--numeric_only", action='store_true', default=True, help="whether pretraining on ND only was made")
