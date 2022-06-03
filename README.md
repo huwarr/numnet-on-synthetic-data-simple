@@ -5,8 +5,18 @@ A more simple scheme for pretraining NumNet+ on synthetic numerical and textual 
 Training scheme consists of the following steps:
 
 1. Pre-trainiing NumNet+ (without reasoning module) on synthetic numerical data.
+
+  [checkpoint](https://drive.google.com/file/d/1eVBsy7C-J1rUY1Qs_z1QLmmZXgw7CIx-/view?usp=sharing)
+
 2. Finetuning result of (1) on synthetic textual data.
+
+  [checkpoint](https://drive.google.com/file/d/1Cq8WGoV-ubKMMf72rlnVpIE4tUiDnY8k/view?usp=sharing)
+  
 3. Finetuning result of (2) or (1) on DROP.
+
+  [ND, finetuned on DROP - checkpoint](https://drive.google.com/file/d/1kJk5k037esACFSE-tffD1bUlnyItpOe8/view?usp=sharing)
+  
+  [baseline, no gcn on DROP - checkpoint](https://drive.google.com/file/d/1lhoacSkr7nKJHVdNWkUifh7qoduYSBvG/view?usp=sharing)
 
 ## Sources
 
