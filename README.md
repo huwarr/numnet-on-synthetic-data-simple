@@ -6,17 +6,17 @@ Training scheme consists of the following steps:
 
 1. Pre-trainiing NumNet+ (without reasoning module) on synthetic numerical data.
 
-  [checkpoint](https://drive.google.com/file/d/1eVBsy7C-J1rUY1Qs_z1QLmmZXgw7CIx-/view?usp=sharing)
+  [checkpoint](https://drive.google.com/file/d/1eVBsy7C-J1rUY1Qs_z1QLmmZXgw7CIx-/view?usp=sharing): `EM = 61.3, F1 = 65.1`
 
 2. Finetuning result of (1) on synthetic textual data.
 
-  [checkpoint](https://drive.google.com/file/d/1Cq8WGoV-ubKMMf72rlnVpIE4tUiDnY8k/view?usp=sharing)
+  [checkpoint](https://drive.google.com/file/d/1Cq8WGoV-ubKMMf72rlnVpIE4tUiDnY8k/view?usp=sharing): `EM = 94.7, F1 = 94.8`
   
 3. Finetuning result of (2) or (1) on DROP.
 
-  [ND, finetuned on DROP - checkpoint](https://drive.google.com/file/d/1kJk5k037esACFSE-tffD1bUlnyItpOe8/view?usp=sharing)
+  [ND, finetuned on DROP - checkpoint](https://drive.google.com/file/d/1kJk5k037esACFSE-tffD1bUlnyItpOe8/view?usp=sharing): `EM = 80.3, F1 = 83.5`
   
-  [baseline, no gcn on DROP - checkpoint](https://drive.google.com/file/d/1lhoacSkr7nKJHVdNWkUifh7qoduYSBvG/view?usp=sharing)
+  [baseline, no gcn on DROP - checkpoint](https://drive.google.com/file/d/1lhoacSkr7nKJHVdNWkUifh7qoduYSBvG/view?usp=sharing): `EM = 79.9, F1 = 83.0`
 
 ## Sources
 
